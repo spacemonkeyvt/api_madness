@@ -21,7 +21,12 @@
   // I will need to fetch and parse json (see Lynda tutorial)
 
     function appendToDomNode(data) {
+      const photo = data.photos.photo;
 
+      photo.forEach((val, i) => {
+        let imgUrl = let imgUrl = `https://farm${val.farm}.staticflickr.com/${val.server}/${val.id}_${val.secret}.jpg`;
+        let img = $(`<img src=${imgUrl} />`);
+      });
     }
 
     $(function() {
