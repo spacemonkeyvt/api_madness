@@ -20,6 +20,11 @@
 
   // I will need to fetch and parse json (see Lynda tutorial)
 
+    $(function() {
+      $.ajax(`${API_URL}?method=flickr.photos.search&format=json&api_key=${FLICKR_KEY}&tags=lighthouse&nojsoncallback=1&per_page=10&page=1`)
+        .then(appendToDomNode)
+        .catch(err => console.error(err));
+    });
 
   </script>
 </body>
