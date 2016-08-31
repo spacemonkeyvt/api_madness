@@ -24,8 +24,13 @@
       const photo = data.photos.photo;
 
       photo.forEach((val, i) => {
-        let imgUrl = let imgUrl = `https://farm${val.farm}.staticflickr.com/${val.server}/${val.id}_${val.secret}.jpg`;
+        let imgUrl = `https://farm${val.farm}.staticflickr.com/${val.server}/${val.id}_${val.secret}.jpg`;
         let img = $(`<img src=${imgUrl} />`);
+
+        setTimeout(() => {
+          $('#app').html('');
+          $('#app').html(img);
+        }, 1000 * i);
       });
     }
 
